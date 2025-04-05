@@ -1344,7 +1344,7 @@ export class OAuthProvider extends OAuthVerifier {
     router.get(
       '/oauth/authorize',
       navigationHandler(async function (req, res) {
-        validateFetchSite(req, res, ['cross-site', 'none'])
+        validateFetchSite(req, res, ['cross-site', 'same-origin', 'none'])
 
         const query = Object.fromEntries(this.url.searchParams)
 
